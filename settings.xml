@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+    <!-- スキャン対象フォルダの登録（1つだけ） -->
+    <!-- 登録は下の action ボタンから行う。default.py の選択モードが
+         JSON-RPC の Files.GetSources（media=music）で登録済みの
+         音楽ソースだけを取得し、一覧ダイアログで選ばせる。
+         選んだパスは setSetting("target_folder", ...) でここに
+         保存される。選び直せば上書きされる（対象は常に1つ）。
+         フォルダ参照ダイアログ（type="folder" や Dialog().browse の
+         起点指定なし）はローカルドライブまで合成してしまうため、
+         登録の入口には使わない。 -->
+    <setting type="action"
+             label="対象フォルダを登録済みソースから選ぶ"
+             action="RunScript(lib.guiupdate,select_target)"
+             option="close"
+             subsetting="true" />
+
+    <!-- 選択結果の保存先（表示用。手入力でも可） -->
+    <setting id="target_folder"
+             type="text"
+             label="スキャン対象フォルダ："
+             default=""
+             subsetting="true" />
+
+    <!-- 照合用の表示名（ソース名／フォルダ名）。選択モードが保存する。
+         実行時はパスで照合できない場合にこの表示名でも探す -->
+    <setting id="target_label"
+             type="text"
+             label="対象の表示名（照合用）："
+             default=""
+             subsetting="true" />
+
+    <!-- 設定はこれだけ。キー列・ディレイ・マウス設定などの
+         汎用キーマクロ向け項目は、専用アドオン化に伴い廃止した。
+         実行列は固定、キー間隔は1秒、マウスは実行中ロック
+         （完了時または10秒で自動解除）で default.py 側に固定。 -->
+</settings>

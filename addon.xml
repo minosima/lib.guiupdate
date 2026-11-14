@@ -1,0 +1,10 @@
+<addon id="lib.guiupdate" name="ライブラリ更新専用" version="1.0.0" provider-name="ncos1">
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <summary lang="ja">登録した1フォルダへGUI操作で音楽ライブラリ更新を実行する専用アドオン</summary>
+    <description lang="ja">KodiをDLNAサーバーとして使う場合、音楽ライブラリの更新はGUI操作でないと反映されない問題の対策。対象フォルダは登録済みの音楽ソースから選択式で1つだけ登録し、固定のGUI操作列でスキャンを実行する。実行中はマウス操作をロックし、完了時または10秒で自動解除する。汎用キーマクロ版 lib.uodate の後継。</description>
+    <platform>all</platform>
+  </extension>
+</addon>
